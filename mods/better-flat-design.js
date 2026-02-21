@@ -6,7 +6,7 @@ return {
   author: "d016",
   depends: [],
   doMenu: false,
-  main(api) {
+  main() {
     InspectorMorph.prototype.init_ = InspectorMorph.prototype.init;
     InspectorMorph.prototype.init = function (...args) {
       this.init_(...args);
@@ -200,7 +200,7 @@ return {
       isTransparent ? ctx.stroke() : ctx.fill();
     };
     MorphicPreferences.isFlat = true;
-    api.ide.refreshIDE();
+    this.api.ide.refreshIDE();
   },
   cleanupFuncs: [
     function () {

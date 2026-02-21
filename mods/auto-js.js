@@ -7,7 +7,7 @@ return {
     depends: [],
     doMenu: false,
 
-    main(api) {
+    main() {
         this.startingValue = Process.prototype.enableJS;
         Process.prototype.enableJS = true;
     },

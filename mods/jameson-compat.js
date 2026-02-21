@@ -34,7 +34,7 @@ return {
     doMenu: false, // whether to add a menu item
 
     // Main function - gets ran when the mod is loaded
-    main(api) {
+    main() {
         // Jameson UUID v4 generation and WebCrypto access
         SnapExtensions.primitives.set(
             'generate_uuid()',
