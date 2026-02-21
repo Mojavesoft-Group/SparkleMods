@@ -7,3 +7,5 @@ Of course, you'll need the mod. After that, fork this repo, add the mod in the "
 Mods are submitted over the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), if not said otherwise.
 
 Submitting a UPDATE to a mod is the same, just fork the repo again, update the mod file, and make sure the commit, in its extra information, contains info about the new update. This will eventually be shown in the mod page in Crackle.
+
+After submitting a new mod or a update, please run generate.js with node, to generate the mods.json that Crackle uses!
