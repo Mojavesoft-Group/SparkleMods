@@ -7,6 +7,8 @@ return {
   depends: [],
   doMenu: false,
   main() {
+    this.api.disallowSnaps("Split"); // split already has a better flat design, so disallow it to prevent conflicts
+    
     InspectorMorph.prototype.init_ = InspectorMorph.prototype.init;
     InspectorMorph.prototype.init = function (...args) {
       this.init_(...args);
