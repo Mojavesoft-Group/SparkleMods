@@ -12,9 +12,7 @@ return {
         Process.prototype.enableJS = true;
     },
 
-    cleanupFuncs: [
-        () => {
-            Process.prototype.enableJS = this.startingValue;
-        }
-    ],
+    cleanupFunc() {
+        Process.prototype.enableJS = this.startingValue;
+    }
 }

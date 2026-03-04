@@ -476,18 +476,16 @@ InputSlotMorph.prototype.render = function (ctx) {
     MorphicPreferences.isFlat = true;
     this.api.ide.refreshIDE();
   },
-  cleanupFuncs: [
-    function () {
-      DialogBoxMorph.prototype.render = DialogBoxMorph.prototype.render_;
-      MenuMorph.prototype.createItems = MenuMorph.prototype.createItems_;
-      SliderMorph.prototype.init = SliderMorph.prototype.init_;
-      PushButtonMorph.prototype.drawBackground =
-        PushButtonMorph.prototype.drawBackground_;
-      PushButtonMorph.prototype.drawOutline =
-        PushButtonMorph.prototype.drawOutline_;
-      InspectorMorph.prototype.init = InspectorMorph.prototype.init_;
-      InputSlotMorph.prototype.render = InputSlotMorph.prototype.render_;
-      BooleanSlotMorph.prototype.drawDiamond = BooleanSlotMorph.prototype.drawDiamond_;
-    },
-  ],
+  cleanupFunc() {
+    DialogBoxMorph.prototype.render = DialogBoxMorph.prototype.render_;
+    MenuMorph.prototype.createItems = MenuMorph.prototype.createItems_;
+    SliderMorph.prototype.init = SliderMorph.prototype.init_;
+    PushButtonMorph.prototype.drawBackground =
+    PushButtonMorph.prototype.drawBackground_;
+    PushButtonMorph.prototype.drawOutline =
+    PushButtonMorph.prototype.drawOutline_;
+    InspectorMorph.prototype.init = InspectorMorph.prototype.init_;
+    InputSlotMorph.prototype.render = InputSlotMorph.prototype.render_;
+    BooleanSlotMorph.prototype.drawDiamond = BooleanSlotMorph.prototype.drawDiamond_;
+  }
 };

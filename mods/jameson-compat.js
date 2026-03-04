@@ -136,23 +136,18 @@ return {
         );
     },
 
-
-
-    // Cleanup functions - get ran when the mod is "deleted"
-    cleanupFuncs: [
-        () => {
-            SnapExtensions.primitives.delete('generate_uuid()');
-            SnapExtensions.primitives.delete('uuid_available()');
-            SnapExtensions.primitives.delete('webcrypto_available()');
-            SnapExtensions.primitives.delete('trusted_urls()');
-            SnapExtensions.primitives.delete('all_primitives()');
-            SnapExtensions.primitives.delete('websocket_connect(url)');
-            SnapExtensions.primitives.delete('websocket_close(obj, code)');
-            SnapExtensions.primitives.delete('websocket_state(obj)');
-            SnapExtensions.primitives.delete('websocket_send(obj, data)');
-            SnapExtensions.primitives.delete('websocket_lastmsg(obj)');
-            SnapExtensions.primitives.delete('websocket_msgchecked(obj)');
-        }
-    ]
-
+    // Cleanup function - gets ran when the mod is "deleted"
+    cleanupFunc() {
+        SnapExtensions.primitives.delete('generate_uuid()');
+        SnapExtensions.primitives.delete('uuid_available()');
+        SnapExtensions.primitives.delete('webcrypto_available()');
+        SnapExtensions.primitives.delete('trusted_urls()');
+        SnapExtensions.primitives.delete('all_primitives()');
+        SnapExtensions.primitives.delete('websocket_connect(url)');
+        SnapExtensions.primitives.delete('websocket_close(obj, code)');
+        SnapExtensions.primitives.delete('websocket_state(obj)');
+        SnapExtensions.primitives.delete('websocket_send(obj, data)');
+        SnapExtensions.primitives.delete('websocket_lastmsg(obj)');
+        SnapExtensions.primitives.delete('websocket_msgchecked(obj)');
+    }
 }
