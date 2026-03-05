@@ -11,3 +11,7 @@ Mods are submitted over the [GNU General Public License v3.0](https://www.gnu.or
 Submitting a UPDATE to a mod is the same, just fork the repo again, update the mod file, and make sure the commit, in its extra information, contains info about the new update. This will eventually be shown in the mod page in Crackle.
 
 After submitting a new mod or a update, please run generate.js with node, to generate the mods.json that Crackle uses!
+
+## A note about manmade code
+The owner of this project believes in good faith that it complies with [The Manmade Software Declaration 1.0](https://mojavesoft.net/ai-policy/1.0).
+Contributors are encouraged to follow the guidelines described at the aforementioned link when proposing any code changes, and patches that appear to violate those rules may be rejected at any time.
