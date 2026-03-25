@@ -25,6 +25,7 @@ const mods = [];
 // read all files in the mods directory
 const files = fs.readdirSync(modsDir);
 files.forEach(file => {
+  console.log("File: " + file)
     if (file.endsWith('.js')) {
         const filePath = path.join(modsDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
