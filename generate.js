@@ -32,7 +32,8 @@ files.forEach(file => {
         const mod =  new func();
         
 
-        if (mod.id) {mod.ID = mod.id}
+        if (mod.id) {mod.ID = mod.id;}
+        if (mod.ID) {
         console.log(mod);
         console.warn(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
@@ -55,6 +56,7 @@ files.forEach(file => {
         
 
         mods.push(mod);
+        }
     }
 });
 
