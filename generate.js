@@ -5,12 +5,17 @@
 //
 
 class FakeMod { // Ugh.
-  constructor() {
-  }
+    constructor() {}
 }
-const { compileFunction } = require('vm');
-const { createContext } = require('vm');
-const parsingContext = createContext({Mod: FakeMod})
+const {
+    compileFunction
+} = require('vm');
+const {
+    createContext
+} = require('vm');
+const parsingContext = createContext({
+    Mod: FakeMod
+})
 
 const fs = require('fs');
 const path = require('path');
@@ -25,19 +30,27 @@ const mods = [];
 // read all files in the mods directory
 const files = fs.readdirSync(modsDir);
 files.forEach(file => {
-  console.log("File: " + file)
+    console.log("File: " + file)
     if (file.endsWith('.js')) {
         const filePath = path.join(modsDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
-        const func = compileFunction(content, [], {parsingContext});
-        let mod =  new func();
+        const func = compileFunction(content, [], {
+            parsingContext
+        });
+        let mod = new func();
         let modJSON = {}
         console.log(mod);
+        mod = new mod();
+        modJSON = {
+            version: mod.VERSION,
+            name: mod.NAME,
+            description: mod.DESCRIPTION,
+            author: mod.AUTHOR,
+            id: mod.ID
+        };
+        mods.push(modJSON);
 
-        if (mod.id) {mod.ID = mod.id;  modJSON = {version: mod.version, name: mod.name, description: mod.description, author: mod.author, id: mod.id}; mods.push(modJSON)}
-        else { mod = new mod(); modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR, id: mod.ID}; mods.push(modJSON);}
-
-              console.warn(path.join(extraDir, mod.ID));
+        console.warn(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
         const extraPath = path.join(extraDir, mod.ID)
         if (fs.existsSync(extraPath)) {
@@ -48,16 +61,16 @@ files.forEach(file => {
             if (extra.includes("logo.png")) {
                 mod.extra.push("logo");
             }
-            
+
             if (extra.includes("readme.txt")) {
                 mod.extra.push("readme");
             }
         } else {
             mod.extra = null;
         }
-        
 
-        
+
+
     }
 });
 
