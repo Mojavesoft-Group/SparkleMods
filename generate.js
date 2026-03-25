@@ -9,11 +9,12 @@ class FakeMod { // Ugh.
   }
 }
 
-const parsingContext = vm.createContext({Mod: FakeMod})
+const parsingContext = createContext({Mod: FakeMod})
 
 const fs = require('fs');
 const path = require('path');
 const { compileFunction } = require('vm');
+const { createContext } = require('vm');
 
 const modsDir = path.join(__dirname, 'mods');
 const extraDir = path.join(__dirname, 'extra');
