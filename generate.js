@@ -30,6 +30,7 @@ files.forEach(file => {
         const content = fs.readFileSync(filePath, 'utf-8');
         const func = compileFunction(content, [], {parsingContext});
         const mod =  new func();
+        console.log(mod)
 
         // see if there is a extra folder, and if so whats in it
         const extraPath = path.join(extraDir, mod.ID)
