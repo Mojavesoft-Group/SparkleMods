@@ -1,5 +1,4 @@
 return class extends Mod {
-    // Metadata
     ID = "jameson-compat"; // the id of the mod
     NAME = "Jameson Compatibility"; // human-readable name
     DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives."; // description
