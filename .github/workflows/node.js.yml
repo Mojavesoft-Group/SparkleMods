@@ -3,6 +3,8 @@ name: Refresh mods.json
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - mods/*.js
 
 jobs:
   build:
