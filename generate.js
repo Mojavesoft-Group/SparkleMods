@@ -34,7 +34,7 @@ files.forEach(file => {
         let modJSON = {}
         console.log(mod);
 
-        if (mod.id) {mod.ID = mod.id; modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR, mods.push({mod);}
+        if (mod.id) {mod.ID = mod.id; modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR}; mods.push({modJSON);}
         else { mod = new mod(); mods.push({mod);}
 
               console.warn(path.join(extraDir, mod.ID));
