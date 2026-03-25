@@ -24,7 +24,7 @@
         "id": "jameson-compat",
         "name": "Jameson Compatibility",
         "description": "Patch Snap! to support Jameson-only primitives. Does not include Jameson libraries.",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "author": "mojavesoft.net",
         "depends": [],
         "extra": null
