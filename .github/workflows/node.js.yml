@@ -2,7 +2,7 @@ name: Refresh mods.json
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "fix-actions" ]
     paths:
       - mods/*.js
 
