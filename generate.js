@@ -25,7 +25,7 @@ files.forEach(file => {
     if (file.endsWith('.js')) {
         const filePath = path.join(modsDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
-        const func = compileFunction(content, [], {[{Mod}]);
+        const func = compileFunction(content, [], {{Mod});
         const mod = func();
 
         // delete code from the mod object, we only want the info
