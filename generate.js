@@ -8,13 +8,13 @@ class FakeMod { // Ugh.
   constructor() {
   }
 }
-
+const { compileFunction } = require('vm');
+const { createContext } = require('vm');
 const parsingContext = createContext({Mod: FakeMod})
 
 const fs = require('fs');
 const path = require('path');
-const { compileFunction } = require('vm');
-const { createContext } = require('vm');
+
 
 const modsDir = path.join(__dirname, 'mods');
 const extraDir = path.join(__dirname, 'extra');
