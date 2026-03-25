@@ -1,5 +1,5 @@
-# Crackle Mods
-Collection of Crackle mods, downloaded/installed by the menu in Crackle.
+# Sparkle Mods
+Collection of Sparkle mods, downloaded/installed by the menu in Sparkle.
 
 ## Submitting a mod
 Fork this repo, add the mod in the "mods" directory as `[id].js`. Then, create a pull request with that fork to this repo, where we will review it. If it is, it'll be merged in the main repo where people can install it!
