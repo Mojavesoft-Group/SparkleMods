@@ -30,13 +30,13 @@ files.forEach(file => {
         const filePath = path.join(modsDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
         const func = compileFunction(content, [], {parsingContext});
-        const mod =  new func();
+        let mod =  new func();
         console.log(mod);
 
         if (mod.id) {mod.ID = mod.id;}
-        if (mod.ID) {
-        
-        console.warn(path.join(extraDir, mod.ID));
+        else { mod = new mod() }
+
+              console.warn(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
         const extraPath = path.join(extraDir, mod.ID)
         if (fs.existsSync(extraPath)) {
@@ -57,7 +57,6 @@ files.forEach(file => {
         
 
         mods.push(mod);
-        }
     }
 });
 
