@@ -1,11 +1,11 @@
 return class extends Mod {
-    ID = "jameson-compat"; // the id of the mod
-    NAME = "Jameson Compatibility"; // human-readable name
-    DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives."; // description
-    VERSION = "1.3.0"; // version
-    AUTHOR = "mojavesoft.net"; // author
-    DEPENDS = []; // dependencies (mod ids, useful for libraries)
-    DO_MENU = false; // whether to add a menu item
+    ID = "jameson-compat";
+    NAME = "Jameson Compatibility";
+    DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives.";
+    VERSION = "1.3.0";
+    AUTHOR = "mojavesoft.net";
+    DEPENDS = [];
+    DO_MENU = false;
 
     // Main function - gets ran when the mod is loaded
     main() {
