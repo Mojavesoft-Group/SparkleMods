@@ -34,8 +34,8 @@ files.forEach(file => {
         let modJSON = {}
         console.log(mod);
 
-        if (mod.id) {mod.ID = mod.id; modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR}; mods.push(modJSON);}
-        else { mod = new mod(); mods.push(mod);}
+        if (mod.id) {mod.ID = mod.id; mods.push(mod)}
+        else { mod = new mod(); modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR}; mods.push(modJSON); mods.push(modJSON);}
 
               console.warn(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
