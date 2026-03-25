@@ -31,15 +31,8 @@ files.forEach(file => {
         const func = compileFunction(content, [], {parsingContext});
         const mod = func();
 
-        // delete code from the mod object, we only want the info
-        delete mod.main;
-        delete mod.cleanupFuncs;
-
-        // and doMenu
-        delete mod.doMenu;
-
         // see if there is a extra folder, and if so whats in it
-        const extraPath = path.join(extraDir, mod.id)
+        const extraPath = path.join(extraDir, mod.ID)
         if (fs.existsSync(extraPath)) {
             const extra = fs.readdirSync(extraPath);
 
