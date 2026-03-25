@@ -1,4 +1,4 @@
-return class extends Mod {
+return class extends Mod { 
     ID = "jameson-compat";
     NAME = "Jameson Compatibility";
     DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives."; // test comment
