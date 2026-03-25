@@ -4,6 +4,11 @@
 // with the info from the mods
 //
 
+class Mod {
+  constructor() {
+  }
+}
+
 const fs = require('fs');
 const path = require('path');
 const { compileFunction } = require('vm');
