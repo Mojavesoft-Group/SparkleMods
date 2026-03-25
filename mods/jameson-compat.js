@@ -1,40 +1,16 @@
-/*
-MIT License
-
-Copyright (c) 2026 PPPDUD
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-*/
-
-return {
+return class extends Mod {
     // Metadata
-    id: "jameson-compat", // the id of the mod
-    name: "Jameson Compatibility", // human-readable name
-    description: "Patch Snap! to support Jameson-only primitives. Does not include Jameson libraries.", // description
-    version: "1.2.0", // version
-    author: "mojavesoft.net", // author
-    depends: [], // dependencies (mod ids, useful for libraries)
-    doMenu: false, // whether to add a menu item
+    ID = "jameson-compat"; // the id of the mod
+    NAME = "Jameson Compatibility"; // human-readable name
+    DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives."; // description
+    VERSION = "1.3.0"; // version
+    AUTHOR = "mojavesoft.net"; // author
+    DEPENDS = []; // dependencies (mod ids, useful for libraries)
+    DO_MENU = false; // whether to add a menu item
 
     // Main function - gets ran when the mod is loaded
     main() {
+        this.api.disallowSnaps("Jameson")
         // Jameson UUID v4 generation and WebCrypto access
         SnapExtensions.primitives.set(
             'generate_uuid()',
@@ -134,9 +110,38 @@ return {
                 return obj.jamesonMsgChecked;
             }
         );
-    },
 
-    // Cleanup function - gets ran when the mod is "deleted"
+        // Jameson-specific APIs for detecting Sparkle
+        SnapExtensions.primitives.set(
+            "sparkle_detect()",
+            function() {
+                return typeof window.__crackle__ !== 'undefined'
+            },
+        );
+
+        SnapExtensions.primitives.set(
+            "sparkle_version()",
+            function() {
+                return window.__crackle__?.version ?? "";
+            },
+        );
+
+        SnapExtensions.primitives.set(
+            "sparkle_source()",
+            function() {
+                return window.__crackle__?.source ?? "";
+            },
+        );
+
+        SnapExtensions.primitives.set(
+            "sparkle_isdev()",
+            function() {
+                return window.__crackle__?.isDev ?? false;
+            },
+        );
+    }
+
+    // Cleanup function - get ran when the mod is "deleted"
     cleanupFunc() {
         SnapExtensions.primitives.delete('generate_uuid()');
         SnapExtensions.primitives.delete('uuid_available()');
@@ -149,5 +154,9 @@ return {
         SnapExtensions.primitives.delete('websocket_send(obj, data)');
         SnapExtensions.primitives.delete('websocket_lastmsg(obj)');
         SnapExtensions.primitives.delete('websocket_msgchecked(obj)');
+        SnapExtensions.primitives.delete('sparkle_detect()');
+        SnapExtensions.primitives.delete('sparkle_version()');
+        SnapExtensions.primitives.delete('sparkle_source()');
+        SnapExtensions.primitives.delete('sparkle_isdev()');
     }
 }
