@@ -8,12 +8,13 @@ class FakeMod { // Ugh.
   constructor() {
   }
 }
-
-const parsingContext = vm.createContext({Mod: FakeMod})
+const { compileFunction } = require('vm');
+const { createContext } = require('vm');
+const parsingContext = createContext({Mod: FakeMod})
 
 const fs = require('fs');
 const path = require('path');
-const { compileFunction } = require('vm');
+
 
 const modsDir = path.join(__dirname, 'mods');
 const extraDir = path.join(__dirname, 'extra');
@@ -24,21 +25,21 @@ const mods = [];
 // read all files in the mods directory
 const files = fs.readdirSync(modsDir);
 files.forEach(file => {
+  console.log("File: " + file)
     if (file.endsWith('.js')) {
         const filePath = path.join(modsDir, file);
         const content = fs.readFileSync(filePath, 'utf-8');
-        const func = compileFunction(content, [], {{parsingContext});
-        const mod = func();
+        const func = compileFunction(content, [], {parsingContext});
+        let mod =  new func();
+        let modJSON = {}
+        console.log(mod);
 
-        // delete code from the mod object, we only want the info
-        delete mod.main;
-        delete mod.cleanupFuncs;
+        if (mod.id) {mod.ID = mod.id;  modJSON = {version: mod.version, name: mod.name, description: mod.description, author: mod.author, id: mod.id}; mods.push(modJSON)}
+        else { mod = new mod(); modJSON = {version: mod.VERSION, name: mod.NAME, description: mod.DESCRIPTION, author: mod.AUTHOR, id: mod.ID}; mods.push(modJSON);}
 
-        // and doMenu
-        delete mod.doMenu;
-
+              console.warn(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
-        const extraPath = path.join(extraDir, mod.id)
+        const extraPath = path.join(extraDir, mod.ID)
         if (fs.existsSync(extraPath)) {
             const extra = fs.readdirSync(extraPath);
 
@@ -56,7 +57,7 @@ files.forEach(file => {
         }
         
 
-        mods.push(mod);
+        
     }
 });
 
