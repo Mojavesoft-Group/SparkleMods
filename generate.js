@@ -34,6 +34,7 @@ files.forEach(file => {
 
         if (mod.id) {mod.ID = mod.id}
         console.log(mod);
+        console.log(path.join(extraDir, mod.ID));
         // see if there is a extra folder, and if so whats in it
         const extraPath = path.join(extraDir, mod.ID)
         if (fs.existsSync(extraPath)) {
