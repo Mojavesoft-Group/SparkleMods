@@ -1,32 +1,23 @@
 [
     {
-        "id": "auto-js",
+        "version": "1.0.0",
         "name": "Auto JS",
         "description": "Automatically, by default, enable JavaScript extensions.",
-        "version": "1.0.0",
         "author": "codingisfun2831",
-        "depends": [],
-        "extra": [
-            "logo",
-            "readme"
-        ]
+        "id": "auto-js"
     },
     {
-        "id": "better-flat-design",
+        "version": "1.0.1",
         "name": "Better Flat Design",
         "description": "Makes flat design BETTER!",
-        "version": "1.0.1",
         "author": "d016",
-        "depends": [],
-        "extra": null
+        "id": "better-flat-design"
     },
     {
-        "id": "jameson-compat",
+        "version": "1.3.0",
         "name": "Jameson Compatibility",
-        "description": "Patch Snap! to support Jameson-only primitives. Does not include Jameson libraries.",
-        "version": "1.2.0",
+        "description": "Patch Snap! and its forks to support Jameson-only primitives.",
         "author": "mojavesoft.net",
-        "depends": [],
-        "extra": null
+        "id": "jameson-compat"
     }
 ]
