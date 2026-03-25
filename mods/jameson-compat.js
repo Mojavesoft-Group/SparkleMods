@@ -28,7 +28,7 @@ return {
     id: "jameson-compat", // the id of the mod
     name: "Jameson Compatibility", // human-readable name
     description: "Patch Snap! to support Jameson-only primitives. Does not include Jameson libraries.", // description
-    version: "1.2.0", // version
+    version: "1.2.1", // version
     author: "mojavesoft.net", // author
     depends: [], // dependencies (mod ids, useful for libraries)
     doMenu: false, // whether to add a menu item
