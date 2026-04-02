@@ -1,7 +1,13 @@
 # Sparkle Mods
+> [!WARNING]
+> Historically, Crackle addons were written to use a system in which each addon returned an object. Near the end of Crackle's development, this system was replaced but was never properly removed from the code.
+> 
+> Starting with Sparkle v0.3, such addons will no longer function properly. No new addons written this way will be accepted to the `SparkleMods` repo.
+
+
 Collection of Sparkle addons, downloaded/installed by the menu in Sparkle.
 
-## Submitting a mod
+## Submitting an addon
 Fork this repo, add the addon in the "mods" directory as `[id].js`. Then, create a pull request with that fork to this repo, where we will review it. If it is, it'll be merged in the main repo where people can install it!
 
 Mods are submitted with the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), if not said otherwise.
