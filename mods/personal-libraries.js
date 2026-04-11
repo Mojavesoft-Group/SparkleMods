@@ -2,8 +2,8 @@ return class extends Mod {
   ID = "personal-libraries";
   NAME = "Personal Libraries";
   DESCRIPTION =
-    "Create, Import, and Export your own custom libraries! \n (Userscript made by tethrarxitet, expanded by d016)"; // description
-  VERSION = "1.0";
+    "Create, Import, and Export your own custom libraries! \n (Userscript made by tethrarxitet, expanded by d016. Editing Libraries is UNFINISHED!)"; // description
+  VERSION = "1.1_b";
   AUTHOR = "Tethrarxitet, d016";
   DEPENDS = [];
   main() {
