@@ -19,12 +19,5 @@
         "description": "Patch Snap! and its forks to support Jameson-only primitives.",
         "author": "mojavesoft.net",
         "id": "jameson-compat"
-    },
-    {
-        "version": "1.1_b",
-        "name": "Personal Libraries",
-        "description": "Create, Import, and Export your own custom libraries! \n (Userscript made by tethrarxitet, expanded by d016. Editing Libraries is UNFINISHED!)",
-        "author": "Tethrarxitet, d016",
-        "id": "personal-libraries"
     }
 ]
