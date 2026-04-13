@@ -19,5 +19,12 @@
         "description": "Patch Snap! and its forks to support Jameson-only primitives.",
         "author": "mojavesoft.net",
         "id": "jameson-compat"
+    },
+    {
+        "version": "1.0.0",
+        "name": "Whitelist ego-lay-atman-bay",
+        "description": "Whitelist ego-lay-atman-bay's custom primitives for Snap!.",
+        "author": "PPPDUD",
+        "id": "whitelist-egolayatmanbay"
     }
 ]
