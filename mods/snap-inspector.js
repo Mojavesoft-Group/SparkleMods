@@ -24,8 +24,8 @@ return class extends Mod {
   // Metadata
   ID = "snap-inspector"; // the id of the addon
   NAME = "Snap! Inspector"; // human-readable name
-  DESCRIPTION = "Inspect Snap!'s internals and temporarily patch them."; // description
-  VERSION = "1.0.1"; // version
+  DESCRIPTION = "Inspect Snap!'s internals and patch them."; // description
+  VERSION = "2.0.0"; // version
   AUTHOR = "PPPDUD"; // author
   DEPENDS = []; // dependencies (addon ids, useful for libraries)
   DO_MENU = true; // whether to add a menu item
@@ -33,6 +33,8 @@ return class extends Mod {
   // Main function - gets ran when the addon is loaded
   main() {
     let ide = this.api.ide;
+    eval(this.api.storage.get("custom_js"));
+
     this.menu.addItem("Execute JavaScript", () => {
       new DialogBoxMorph(
         this,
@@ -43,6 +45,20 @@ return class extends Mod {
       ).promptCode(
         "Execute JavaScript",
         "// JavaScript code goes here.",
+        world,
+      );
+    });
+
+    this.menu.addItem("Run custom JavaScript on startup", () => {
+      new DialogBoxMorph(
+        this,
+        (input) => {
+          eval(input);
+        },
+        this,
+      ).promptCode(
+        "Custom JavaScript",
+        "// The code that you write here will be executed whenever the Snap! Patcher is loaded.\n// In your code, you can use Sparkle-specific idioms like this.api.inform to make tasks easier.",
         world,
       );
     });
@@ -79,10 +95,17 @@ return class extends Mod {
               if (name in window.__crackle__.autoloadMods) {
                 add(name);
               }
-              this.api.inform("In order to changes to take effect, you may have to refresh this page.", "Notice");
+              this.api.inform(
+                "In order to changes to take effect, you may have to refresh this page.",
+                "Notice",
+              );
             },
             this,
-          ).promptCode("Edit addon code", window.__crackle__.modCodes[name], world);
+          ).promptCode(
+            "Edit addon code",
+            window.__crackle__.modCodes[name],
+            world,
+          );
         },
         new_obj,
         "",
