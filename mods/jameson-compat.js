@@ -3,7 +3,7 @@ return class extends Mod {
     NAME = "Jameson Compatibility";
     DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives.";
     VERSION = "1.3.0";
-    AUTHOR = "mojavesoft.net";
+    AUTHOR = "PPPDUD";
     DEPENDS = [];
     DO_MENU = false;
 
