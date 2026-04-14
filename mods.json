@@ -22,6 +22,13 @@
     },
     {
         "version": "1.0.0",
+        "name": "Snap! Inspector",
+        "description": "Inspect Snap!'s internals and patch them.",
+        "author": "PPPDUD",
+        "id": "snap-inspector"
+    },
+    {
+        "version": "1.0.0",
         "name": "Whitelist ego-lay-atman-bay",
         "description": "Whitelist ego-lay-atman-bay's custom primitives for Snap!.",
         "author": "PPPDUD",
