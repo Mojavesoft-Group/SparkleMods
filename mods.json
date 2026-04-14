@@ -17,7 +17,7 @@
         "version": "1.3.0",
         "name": "Jameson Compatibility",
         "description": "Patch Snap! and its forks to support Jameson-only primitives.",
-        "author": "mojavesoft.net",
+        "author": "PPPDUD",
         "id": "jameson-compat"
     },
     {
