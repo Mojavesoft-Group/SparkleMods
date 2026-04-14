@@ -21,9 +21,9 @@
         "id": "jameson-compat"
     },
     {
-        "version": "1.0.0",
+        "version": "1.0.1",
         "name": "Snap! Inspector",
-        "description": "Inspect Snap!'s internals and patch them.",
+        "description": "Inspect Snap!'s internals and temporarily patch them.",
         "author": "PPPDUD",
         "id": "snap-inspector"
     },
