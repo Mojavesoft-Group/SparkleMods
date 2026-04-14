@@ -2,8 +2,8 @@ return class extends Mod {
   // Metadata
   ID = "snap-inspector"; // the id of the addon
   NAME = "Snap! Inspector"; // human-readable name
-  DESCRIPTION = "Inspect Snap!'s internals and patch them."; // description
-  VERSION = "1.0.0"; // version
+  DESCRIPTION = "Inspect Snap!'s internals and temporarily patch them."; // description
+  VERSION = "1.0.1"; // version
   AUTHOR = "PPPDUD"; // author
   DEPENDS = []; // dependencies (addon ids, useful for libraries)
   DO_MENU = true; // whether to add a menu item
@@ -60,7 +60,7 @@ return class extends Mod {
               this.api.inform("In order to changes to take effect, you may have to refresh this page.", "Notice");
             },
             this,
-          ).promptCode("View code", window.__crackle__.modCodes[name], world);
+          ).promptCode("Edit addon code", window.__crackle__.modCodes[name], world);
         },
         new_obj,
         "",
