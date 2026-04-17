@@ -29,6 +29,13 @@
     },
     {
         "version": "1.0.0",
+        "name": "Snavanced! Icon Theme",
+        "description": "Change Snap!'s icons to look more like Snavanced!.",
+        "author": "PPPDUD",
+        "id": "snavanced-icons"
+    },
+    {
+        "version": "1.0.0",
         "name": "Whitelist ego-lay-atman-bay",
         "description": "Whitelist ego-lay-atman-bay's custom primitives for Snap!.",
         "author": "PPPDUD",
