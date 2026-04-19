@@ -1,4 +1,4 @@
-return class extends Mod {
+return class extends Mod { 
     // Metadata
     ID = "auto-js"; // the id of the addon
     NAME = "Auto JS"; // human-readable name
