@@ -20,7 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
-return class extends Mod { 
+return class extends Mod {
     ID = "jameson-compat";
     NAME = "Jameson Compatibility";
     DESCRIPTION = "Patch Snap! and its forks to support Jameson-only primitives.";
