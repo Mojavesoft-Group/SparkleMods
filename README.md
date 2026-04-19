@@ -16,6 +16,9 @@ Submitting an update to an addon is the same, just fork the repo again, and upda
 
 Whenever changes are pushed to the `master` branch, a GitHub Actions bot will automatically regenerate the `mods.json` file using the `generate.js` script (historically, mod developers were expected to do this on their own).
 
+### Code formatting
+Don't worry about formatting your addon code; a GitHub Actions bot will clean it up automatically when your pull request is merged!
+
 ## A note about manmade code
 The owner of this project believes in good faith that it complies with [The Manmade Software Declaration 1.0](https://mojavesoft.net/ai-policy/1.0).
 Contributors are encouraged to follow the guidelines described at the aforementioned link when proposing any code changes, and patches that appear to violate those rules may be rejected at any time.
