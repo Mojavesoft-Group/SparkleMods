@@ -16,7 +16,7 @@ return class extends Mod {
 
     // Main function - gets ran when the addon is loaded
     main() {
-        SymbolMorph.prototype.renderSymbolFlag = function(ctx, color) {
+        this.api.wrapFunction(SymbolMorph.prototype, "renderSymbolFlag", function(ctx, color) {
             // draw a flag
             var w = this.symbolWidth(),
                 h = this.size,
@@ -41,9 +41,9 @@ return class extends Mod {
                 h / 2
             );
             ctx.stroke();
-        };
+        }, true);
 
-        SymbolMorph.prototype.renderSymbolGears = function(ctx, color) {
+        this.api.wrapFunction(SymbolMorph.prototype, "renderSymbolGears", function(ctx, color) {
             // draw gears
             var w = this.symbolWidth(),
                 r = w / 2,
@@ -73,13 +73,13 @@ return class extends Mod {
             ctx.moveTo(w - e, e);
             ctx.lineTo(e, w - e);
             ctx.stroke();
-        };
+        }, true);
 
-        SymbolMorph.prototype.renderSymbolGlobeBig = function(ctx, color) {
+        this.api.wrapFunction(SymbolMorph.prototype, "renderSymbolGlobeBig", function(ctx, color) {
             this.renderSymbolGlobe(ctx, color, true);
-        };
+        }, true);
 
-        SymbolMorph.prototype.renderSymbolGlobe = function(ctx, color, detailed) {
+        this.api.wrapFunction(SymbolMorph.prototype, "renderSymbolGlobe", function(ctx, color, detailed) {
             // draw a stylized globe
             var w = this.symbolWidth(),
                 l = Math.max(w / 30, 0.5);
@@ -118,9 +118,9 @@ return class extends Mod {
             ctx.moveTo(w / 2, l / 2);
             ctx.arcTo(w, w / 2, w / 2, w, w * 2 / 3);
             ctx.stroke();
-        };
+        }, true);
 
-        SymbolMorph.prototype.renderSymbolTick = function(ctx, color) {
+        this.api.wrapFunction(SymbolMorph.prototype, "renderSymbolTick", function(ctx, color) {
             // draw a check mark
             var w = this.symbolWidth() / 3;
 
@@ -133,8 +133,8 @@ return class extends Mod {
             ctx.lineTo(1.5 * w, 2.5 * w);
             ctx.lineTo(2.5 * w, 0.5 * w);
             ctx.stroke();
-        };
-        this.api.ide.refreshIDE();
+        }, true);
+        this.api.world.rerender();
     }
 
     // Cleanup function - get ran when the addon is "deleted"

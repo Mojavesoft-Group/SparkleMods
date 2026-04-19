@@ -20,6 +20,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
+let whitelistURL = "https://ego-lay-atman-bay.github.io/snap-extensions/";
+
 return class extends Mod {
     // Metadata
     ID = "whitelist-egolayatmanbay"; // the id of the addon
@@ -32,11 +34,11 @@ return class extends Mod {
 
     // Main function - gets ran when the addon is loaded
     main() {
-        SnapExtensions.urls.push("https://ego-lay-atman-bay.github.io/snap-extensions/");
+        SnapExtensions.urls.push(whitelistURL);
     }
 
     // Cleanup function - get ran when the addon is "deleted"
     cleanupFunc() {
-        // TODO: add cleanup URL removal code
+        SnapExtensions.urls = SnapExtensions.urls.filter(url => url !== whitelistURL);
     }
 }
