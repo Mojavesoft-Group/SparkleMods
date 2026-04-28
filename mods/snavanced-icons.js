@@ -139,6 +139,6 @@ return class extends Mod {
 
     // Cleanup function - get ran when the addon is "deleted"
     cleanupFunc() {
-        // TODO: add cleanup function
+        this.api.world.rerender();
     }
 }
