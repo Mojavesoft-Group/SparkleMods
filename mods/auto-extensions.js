@@ -10,17 +10,17 @@ return class extends Mod {
     main() {
         this.startingValue = SpriteMorph.prototype.showingExtensions;
         SpriteMorph.prototype.showingExtensions =
-                true;
-            this.flushBlocksCache('variables');
-            this.refreshPalette();
-            this.categories.refreshEmpty();
+            true;
+        this.flushBlocksCache('variables');
+        this.refreshPalette();
+        this.categories.refreshEmpty();
     }
 
     cleanupFunc() {
         SpriteMorph.prototype.showingExtensions =
-                this.startingValue;
-            this.flushBlocksCache('variables');
-            this.refreshPalette();
-            this.categories.refreshEmpty();
+            this.startingValue;
+        this.flushBlocksCache('variables');
+        this.refreshPalette();
+        this.categories.refreshEmpty();
     }
 }
