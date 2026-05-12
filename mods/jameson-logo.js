@@ -32,7 +32,6 @@ return class extends Mod {
     // Main function - gets ran when the mod is loaded
     main() {
         this.api.disallowSnaps("Jameson");
-        // Jameson UUID v4 generation and WebCrypto access
         this.api.ide.createLogo = function() {
             let old = this.logo;
             this.logo = new Morph();
