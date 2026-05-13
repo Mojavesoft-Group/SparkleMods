@@ -28,8 +28,7 @@ return class extends Mod {
     AUTHOR = "PPPDUD";
     DEPENDS = [];
     DO_MENU = false;
-
-    // Main function - gets ran when the mod is loaded
+    
     main() {
         this.api.disallowSnaps("Jameson");
         this.api.ide.createLogo = function() {
@@ -45,8 +44,6 @@ return class extends Mod {
         this.api.ide.refreshIDE();
     }
 
-
-    // Cleanup function - get ran when the mod is "deleted"
     cleanupFunc() {
         // TODO: Add cleanup function.
     }
