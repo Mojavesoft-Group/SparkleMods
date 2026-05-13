@@ -28,7 +28,7 @@ return class extends Mod {
     AUTHOR = "PPPDUD";
     DEPENDS = [];
     DO_MENU = false;
-    
+
     main() {
         this.api.disallowSnaps("Jameson");
         this.api.ide.createLogo = function() {
@@ -41,7 +41,7 @@ return class extends Mod {
             this.logo.mouseClickLeft = old.mouseClickLeft;
             this.add(this.logo);
         }
-        this.api.ide.refreshIDE(); 
+        this.api.ide.refreshIDE();
     }
 
     cleanupFunc() {
