@@ -18,4 +18,4 @@ return class extends Mod {
     cleanupFunc() {
         Process.prototype.enableJS = this.startingValue;
     }
-}
+} 
