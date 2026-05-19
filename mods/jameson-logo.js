@@ -1,4 +1,5 @@
-throw new Error("Not a function or doesnt exist.");/*MIT License
+throw new Error("Not a function or doesnt exist.");
+/*MIT License
 
 Copyright (c) 2026 PPPDUD
 
@@ -41,7 +42,8 @@ return class extends Mod {
             this.logo.mouseClickLeft = old.mouseClickLeft;
             this.add(this.logo);
         }
-        this.ide.buildPanes(); this.ide.fixLayout();
+        this.ide.buildPanes();
+        this.ide.fixLayout();
     }
 
     cleanupFunc() {
