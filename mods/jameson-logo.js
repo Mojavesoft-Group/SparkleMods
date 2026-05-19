@@ -1,4 +1,3 @@
-throw new Error("Not a function or doesnt exist.");
 /*MIT License
 
 Copyright (c) 2026 PPPDUD
