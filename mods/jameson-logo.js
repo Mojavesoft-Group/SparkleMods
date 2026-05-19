@@ -24,7 +24,7 @@ return class extends Mod {
     ID = "jameson-logo";
     NAME = "Jameson Logo";
     DESCRIPTION = "Replace the Snap! logo with Jameson's logo.";
-    VERSION = "1.1.0a";
+    VERSION = "1.1.0";
     AUTHOR = "PPPDUD";
     DEPENDS = [];
     DO_MENU = false;
