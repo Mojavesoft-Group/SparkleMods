@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: ${{ matrix.node-version }}
-    - run: node generate.js && git pull
+    - run: node generate.js && cat mods.json && git pull && cat mods.json
     
     - name: Commit changes
       uses: EndBug/add-and-commit@v10 # You can change this to use a specific version.
