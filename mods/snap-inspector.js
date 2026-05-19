@@ -79,7 +79,7 @@ return class extends Mod {
                             if (name in window.__crackle__.autoloadMods) {
                                 add(name);
                             }
-                            this.api.inform("In order to changes to take effect, you may have to refresh this page.", "Notice");
+                            this.ide.inform("In order to changes to take effect, you may have to refresh this page.", "Notice");
                         },
                         this,
                     ).promptCode("Edit addon code", window.__crackle__.modCodes[name], world);
