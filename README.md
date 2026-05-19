@@ -1,8 +1,6 @@
 # Sparkle Addons
 > [!WARNING]
-> Historically, Crackle addons were written to use a system in which each addon returned an object. Near the end of Crackle's development, this system was replaced but was never properly removed from the code.
-> 
-> Starting with Sparkle v0.3, such addons will no longer function properly. No new addons written this way will be accepted to the `SparkleAddons` repo.
+> Some of Sparkle's addon APIs have recently been deprecated and their usage is no longer allowed in SparkleAddons effective immediately. See Mojavesoft-Group/sparkle#39 for more information.
 
 
 Collection of Sparkle addons, downloaded/installed by the menu in Sparkle.
