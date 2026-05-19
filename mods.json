@@ -42,7 +42,7 @@
         "id": "personal-libraries"
     },
     {
-        "version": "1.0.1",
+        "version": "1.1.0",
         "name": "Snap! Inspector",
         "description": "Inspect Snap!'s internals and temporarily patch them.",
         "author": "PPPDUD",
