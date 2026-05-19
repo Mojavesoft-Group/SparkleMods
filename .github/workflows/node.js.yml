@@ -1,10 +1,10 @@
 name: Refresh mods.json
 
 on:
-  push:
-    branches: [ "master" ]
-    paths:
-      - mods/*.js
+  workflow_run:
+    workflows: ["Auto-format Javascript"]
+    types:
+      - completed
 
 jobs:
   build:
